@@ -25,4 +25,4 @@ Holy Trinity College
 
 ## Developers
 
-Rhan Jay C. Caber | Kim Renier A. Millan | Gabby Añora
+Rhan Jay C. Caber | Kim Renier A. Millan | Gabby Añora 
