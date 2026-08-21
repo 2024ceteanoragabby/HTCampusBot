@@ -3,7 +3,6 @@
    Holy Trinity College
    ========================================================= */
 
-
 /* =========================================================
    1. GENERAL RESET
    ========================================================= */
@@ -1197,4 +1196,386 @@ footer {
     margin: 10px 0 10px auto;
     max-width: 85%;
     width: fit-content;
+}
+
+/* =========================================================
+   INFORMATION PAGE
+   HTCampusBot - Holy Trinity College
+   ========================================================= */
+
+
+/* ================= PAGE ================= */
+
+.information-page {
+    width: 100%;
+    padding: 120px 5% 80px;
+    background: #f4fbf6;
+    box-sizing: border-box;
+}
+
+
+/* ================= HERO ================= */
+
+.information-hero {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.information-hero .page-label {
+    display: inline-block;
+    color: #168047;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.information-hero h1 {
+    margin: 0 0 15px;
+    font-size: 42px;
+    font-weight: 800;
+    color: #064d2c;
+}
+
+.information-hero p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #53635a;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+
+/* ================= TABLE SECTION ================= */
+
+.table-section {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 55px;
+}
+
+
+/* ================= SECTION HEADING ================= */
+
+.section-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-heading > i {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #dff4e6;
+    color: #117a43;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    color: #064d2c;
+
+    font-size: 27px;
+    font-weight: 800;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #66756c;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* ================= TABLE CONTAINER ================= */
+
+.table-container {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    overflow-x: auto;
+
+    box-shadow: 0 8px 25px rgba(0, 70, 35, 0.08);
+
+    border: 1px solid #dcebe1;
+}
+
+
+/* ================= TABLE ================= */
+
+.table-container table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+
+    min-width: 850px;
+}
+
+
+/* ================= TABLE HEADER ================= */
+
+.table-container thead {
+    background: #147d43;
+}
+
+.table-container th {
+    padding: 18px 20px;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+
+/* ================= TABLE BODY ================= */
+
+.table-container td {
+    padding: 18px 20px;
+
+    color: #26382d;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    border-bottom: 1px solid #e2ebe5;
+
+    vertical-align: top;
+}
+
+
+/* ================= ALTERNATING ROWS ================= */
+
+.table-container tbody tr:nth-child(even) {
+    background: #f7faf8;
+}
+
+.table-container tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+
+/* ================= HOVER ================= */
+
+.table-container tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table-container tbody tr:hover {
+    background: #eaf7ee;
+}
+
+
+/* ================= REMOVE LAST BORDER ================= */
+
+.table-container tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ================= FIRST COLUMN ================= */
+
+.table-container tbody td:first-child {
+    font-weight: 700;
+    color: #116b3c;
+}
+
+
+/* ================= SOURCE NOTE ================= */
+
+.source-note {
+    max-width: 1250px;
+
+    margin: 10px auto 0;
+
+    display: flex;
+
+    gap: 15px;
+
+    padding: 20px 24px;
+
+    background: #e9f7ee;
+
+    border: 1px solid #c9e7d3;
+
+    border-radius: 12px;
+
+    box-sizing: border-box;
+}
+
+.source-note > i {
+    color: #168047;
+
+    font-size: 22px;
+
+    margin-top: 3px;
+}
+
+.source-note strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #064d2c;
+
+    font-size: 15px;
+}
+
+.source-note p {
+    margin: 0;
+
+    color: #52655a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+/* ================= FOOTER ================= */
+
+.information-page + footer {
+    background: #063c24;
+
+    color: #ffffff;
+}
+
+.information-page + footer .footer-bottom {
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 25px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    box-sizing: border-box;
+}
+
+.information-page + footer p {
+    margin: 0;
+
+    color: #dceee3;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .information-page {
+        padding: 100px 3% 60px;
+    }
+
+    .information-hero h1 {
+        font-size: 34px;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 15px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .information-page {
+        padding: 90px 15px 50px;
+    }
+
+    .information-hero {
+        margin-bottom: 35px;
+    }
+
+    .information-hero h1 {
+        font-size: 30px;
+    }
+
+    .information-hero p {
+        font-size: 15px;
+    }
+
+    .section-heading {
+        gap: 10px;
+    }
+
+    .section-heading > i {
+        width: 42px;
+        height: 42px;
+    }
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+    .section-heading p {
+        font-size: 13px;
+    }
+
+    .table-section {
+        margin-bottom: 40px;
+    }
+
+    .table-container {
+        border-radius: 10px;
+    }
+
+    .table-container table {
+        min-width: 750px;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 13px 14px;
+        font-size: 13px;
+    }
+
+    .source-note {
+        padding: 17px;
+    }
+
+    .information-page + footer .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    
+
 }
