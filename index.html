@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTCampusBot | Holy Trinity College</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GOOGLE FONT -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- FONT AWESOME -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header>
+
+    <nav class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html" class="logo-section">
+
+            <img
+                src="images/tiger-logo.png"
+                alt="Tiger Logo"
+            >
+
+            <img
+                src="images/htc-logo.png"
+                alt="Holy Trinity College Logo"
+            >
+
+            <div class="school-name">
+
+                <h2>
+                    Holy Trinity College
+                </h2>
+
+                <span>
+                    General Santos City
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- NAV LINKS -->
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html" class="active">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="information.html">
+                    Information
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    FAQs
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <!-- ACTIONS -->
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="user-login-btn"
+                id="userLoginBtn"
+            >
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    Log In
+                </span>
+
+            </button>
+
+
+            <button
+                type="button"
+                class="chat-btn"
+                id="headerChatBtn"
+            >
+
+                <i class="fa-solid fa-comments"></i>
+
+                <span>
+                    Chat with HTCampusBot
+                </span>
+
+            </button>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="hero-content">
+
+        <div class="hero-left">
+
+            <p class="subtitle">
+                AI-Powered Chatbot Information System
+            </p>
+
+
+            <h1>
+                HTCampusBot
+            </h1>
+
+
+            <h2>
+                Your Smart Assistant for Everything
+                About Holy Trinity College
+            </h2>
+
+
+            <p class="description">
+
+                Get instant answers about admissions,
+                enrollment, tuition fees, scholarships,
+                office schedules, academic programs,
+                school policies, and many other school
+                services—all in one place.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    id="askBotBtn"
+                >
+
+                    <i class="fa-solid fa-comment-dots"></i>
+
+                    Get Started
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="learnMoreBtn"
+                >
+
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    Learn More
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>
+                24/7 Assistance
+            </h3>
+
+            <p>
+                Access school information anytime.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <h3>
+                Accurate Information
+            </h3>
+
+            <p>
+                Updated school announcements and policies.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            <h3>
+                Fast Responses
+            </h3>
+
+            <p>
+                Instant answers to common questions.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-user-graduate"></i>
+
+            <h3>
+                Student Focused
+            </h3>
+
+            <p>
+                Designed for students, parents and visitors.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <h3>
+                Secure
+            </h3>
+
+            <p>
+                Reliable access to official school information.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>
+                Easy to Use
+            </h3>
+
+            <p>
+                Simple interface for everyone.
+            </p>
+
+        </div>
+
+
+    </section>
+
+</section>
+
+
+
+<!-- =========================================================
+     LOGIN MODAL
+========================================================= -->
+
+<div
+    class="login-modal"
+    id="loginModal"
+
+
+
+    <div
+        class="login-backdrop"
+        id="loginBackdrop"
+    ></div>
+
+
+    <div class="login-card">
+
+
+        <button
+            type="button"
+            class="close-login"
+            id="closeLoginBtn"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="login-logos">
+
+            <img
+                src="images/tiger-logo.png"
+                alt="Tiger Logo"
+            >
+
+            <img
+                src="images/htc-logo.png"
+                alt="Holy Trinity College Logo"
+            >
+
+        </div>
+
+
+        <h2>
+            Welcome Back
+        </h2>
+
+
+        <p class="login-description">
+            Sign in to your HTCampusBot account.
+        </p>
+
+
+        <!-- GOOGLE UI -->
+
+        <button
+            type="button"
+            class="google-login-btn"
+            id="googleLoginBtn"
+        >
+
+            <i class="fa-brands fa-google"></i>
+
+            Continue with Google
+
+        </button>
+
+
+        <div class="login-divider">
+
+            <span>
+                or
+            </span>
+
+        </div>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="userLoginForm">
+
+
+            <div class="login-form-group">
+
+                <label for="userEmail">
+                    Email Address
+                </label>
+
+
+                <div class="login-input">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="userEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="login-form-group">
+
+                <label for="userPassword">
+                    Password
+                </label>
+
+
+                <div class="login-input">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="userPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="login-options">
+
+                <label>
+
+                    <input
+                        type="checkbox"
+                        id="rememberUser"
+                    >
+
+                    Remember me
+
+                </label>
+
+
+                <a href="#">
+                    Forgot password?
+                </a>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="user-signin-btn"
+            >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </button>
+
+
+            <p
+                id="userLoginMessage"
+                class="user-login-message"
+            ></p>
+
+
+        </form>
+
+
+        <div class="login-footer-text">
+
+            Don't have an account?
+
+            <a href="#">
+                Contact the administrator
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHATBOT
+========================================================= -->
+
+<div
+    class="chatbot-window"
+    id="chatbotWindow"
+
+
+
+    <div class="chat-header">
+
+
+        <div class="chat-title">
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                HTCampusBot
+            </span>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="close-chat"
+            id="closeChatBtn"
+        >
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="chat-body"
+        id="chatBody"
+    >
+
+
+        <div class="bot-message">
+
+            👋 Hello!
+
+            Welcome to Holy Trinity College.
+
+            How can I help you today?
+
+        </div>
+
+
+        <div class="quick-links">
+
+            <button>
+                Enrollment
+            </button>
+
+            <button>
+                Admission
+            </button>
+
+            <button>
+                Scholarship
+            </button>
+
+            <button>
+                Tuition Fees
+            </button>
+
+            <button>
+                Office Hours
+            </button>
+
+            <button>
+                School Policies
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="chat-footer">
+
+        <input
+            type="text"
+            id="messageInput"
+            placeholder="Type your question..."
+        >
+
+
+        <button
+            type="button"
+            id="sendButton"
+        >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+        </button>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- FLOATING CHAT -->
+
+<button
+    type="button"
+    class="floating-chat"
+    id="floatingChat"
+
+
+    <i class="fa-solid fa-comments"></i>
+
+</button>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div class="footer-box">
+
+            <h3>
+                About HTC
+            </h3>
+
+            <p>
+                Holy Trinity College is committed
+                to providing quality education rooted
+                in Truth, Virtue, and Service.
+            </p>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <ul>
+
+                <li>
+                    Enrollment Requirements
+                </li>
+
+                <li>
+                    Admission Information
+                </li>
+
+                <li>
+                    Scholarships
+                </li>
+
+                <li>
+                    Office Schedules
+                </li>
+
+                <li>
+                    School Policies
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-box">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                Lagao, General Santos City
+            </p>
+
+            <p>
+                info@htc.edu.ph
+            </p>
+
+            <p>
+                (083) 552-0135
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Holy Trinity College | HTCampusBot
+        </p>
+
+        <p>
+            Developed by: Kim Renier Millan | Group Members
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- MAIN JAVASCRIPT -->
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
