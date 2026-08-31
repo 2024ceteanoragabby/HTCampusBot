@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>HTCampusBot | Admin Dashboard</title>
+
+    <link rel="stylesheet" href="admin.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     ADMIN LOGIN
+====================================================== -->
+
+<section id="adminLoginScreen" class="admin-login-screen">
+
+    <div class="admin-login-card">
+
+        <div class="admin-login-logos">
+
+            <img
+                src="../images/tiger-logo.png"
+                alt="Tiger Logo">
+
+            <img
+                src="../images/htc-logo.png"
+                alt="Holy Trinity College Logo">
+
+        </div>
+
+
+        <span class="login-badge">
+            ADMINISTRATOR ACCESS
+        </span>
+
+
+        <h1>
+            HTCampusBot
+        </h1>
+
+
+        <p class="login-school">
+            Holy Trinity College
+        </p>
+
+
+        <p class="login-description">
+            Sign in to access User Access Management.
+        </p>
+
+
+        <form id="adminLoginForm">
+
+            <div class="login-group">
+
+                <label for="adminUsername">
+                    Username / Email
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        placeholder="Enter username or email"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter password"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <label class="remember-admin">
+
+                <input
+                    type="checkbox"
+                    id="rememberAdmin">
+
+                <span>
+                    Remember Me
+                </span>
+
+            </label>
+
+
+            <button
+                type="submit"
+                class="admin-login-button">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </button>
+
+
+            <p
+                id="adminLoginMessage"
+                class="login-message">
+            </p>
+
+        </form>
+
+
+        <div class="login-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Authorized administrator access only
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+====================================================== -->
+
+<section
+    id="adminDashboard"
+    class="admin-dashboard hidden">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="admin-sidebar">
+
+
+        <div class="admin-brand">
+
+            <img
+                src="../images/tiger-logo.png"
+                alt="HTCampusBot Logo">
+
+            <div>
+
+                <strong>
+                    HTCampusBot
+                </strong>
+
+                <span>
+                    Admin Panel
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="admin-nav">
+
+            <button
+                type="button"
+                class="admin-nav-button active">
+
+                <i class="fa-solid fa-users-gear"></i>
+
+                User Access
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button">
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Reports
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button">
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Website
+
+            </a>
+
+
+            <button
+                type="button"
+                id="adminLogoutButton"
+                class="logout-button">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <span>
+                    ADMINISTRATOR
+                </span>
+
+                <h1>
+                    User Access Management
+                </h1>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div class="profile-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        System Administrator
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="admin-content">
+
+
+            <!-- =================================================
+                 USER ACCESS HOME
+            ================================================== -->
+
+            <section
+                id="userAccessPage"
+                class="dashboard-page">
+
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            Manage User Accounts
+                        </h2>
+
+                        <p>
+                            Create and manage accounts authorized
+                            to access HTCampusBot.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="openAddUserButton">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Add New User
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REGISTERED USERS -->
+
+                <section class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Registered Users
+                            </h3>
+
+                            <p>
+                                User accounts currently registered
+                                in the system.
+                            </p>
+
+                        </div>
+
+
+                        <span
+                            id="accountCount"
+                            class="account-count">
+
+                            0 Accounts
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        User ID
+                                    </th>
+
+                                    <th>
+                                        Full Name
+                                    </th>
+
+                                    <th>
+                                        Email Address
+                                    </th>
+
+                                    <th>
+                                        Department
+                                    </th>
+
+                                    <th>
+                                        Role
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="usersTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- PRIVILEGES -->
+
+                <section class="access-launch-card">
+
+
+                    <div class="access-info">
+
+                        <div class="access-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Assign Privileges
+                            </h3>
+
+                            <p>
+                                Configure Read, Write, Execute,
+                                and Admin permissions for users.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="openPrivilegeButton">
+
+                        Manage Privileges
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FORM 1 — ADD NEW USER
+            ================================================== -->
+
+            <section
+                id="addUserPage"
+                class="dashboard-page hidden">
+
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backFromAddUser">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to User Access
+
+                </button>
+
+
+                <section class="form-card">
+
+
+                    <div class="form-heading">
+
+                        <span class="form-badge">
+                            TASK 5 — FORM 1
+                        </span>
+
+                        <h2>
+                            Add New User
+                        </h2>
+
+                        <p>
+                            Create a new account for an authorized
+                            system user.
+                        </p>
+
+                    </div>
+
+
+
+                    <form id="addUserForm">
+
+
+                        <div class="form-grid">
+
+
+                            <div class="form-group">
+
+                                <label for="fullName">
+                                    Full Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    placeholder="Enter full name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="example@email.com"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <select
+                                    id="department"
+                                    required>
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                    <option value="Administration">
+                                        Administration
+                                    </option>
+
+                                    <option value="Registrar">
+                                        Registrar
+                                    </option>
+
+                                    <option value="Admissions">
+                                        Admissions
+                                    </option>
+
+                                    <option value="Accounting">
+                                        Accounting
+                                    </option>
+
+                                    <option value="Guidance">
+                                        Guidance
+                                    </option>
+
+                                    <option value="Scholarship">
+                                        Scholarship
+                                    </option>
+
+                                    <option value="Information Technology">
+                                        Information Technology
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="initialRole">
+                                    Initial Role
+                                </label>
+
+                                <select
+                                    id="initialRole"
+                                    required>
+
+                                    <option value="">
+                                        Select Role
+                                    </option>
+
+                                    <option value="Administrator">
+                                        Administrator
+                                    </option>
+
+                                    <option value="Staff">
+                                        Staff
+                                    </option>
+
+                                    <option value="Office Personnel">
+                                        Office Personnel
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="initialPassword">
+                                    Initial Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="initialPassword"
+                                    placeholder="Create initial password"
+                                    required
+                                    minlength="6">
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="addUserMessage"
+                            class="form-message">
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="cancelAddUser">
+
+                                Cancel
+
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button">
+
+                                <i class="fa-solid fa-user-plus"></i>
+
+                                Submit
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 FORM 2 — ASSIGN PRIVILEGES
+            ================================================== -->
+
+            <section
+                id="privilegePage"
+                class="dashboard-page hidden">
+
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backFromPrivilege">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to User Access
+
+                </button>
+
+
+                <section class="form-card">
+
+
+                    <div class="form-heading">
+
+                        <span class="form-badge">
+                            TASK 5 — FORM 2
+                        </span>
+
+                        <h2>
+                            Assign Privileges
+                        </h2>
+
+                        <p>
+                            Select a registered user and assign
+                            the appropriate system permissions.
+                        </p>
+
+                    </div>
+
+
+                    <form id="privilegeForm">
+
+
+                        <!-- USER ID -->
+
+                        <div class="form-group">
+
+                            <label for="privilegeUser">
+                                User ID
+                            </label>
+
+                            <select
+                                id="privilegeUser"
+                                required>
+
+                                <option value="">
+                                    Select registered user
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- SYSTEM MODULE -->
+
+                        <div class="form-group">
+
+                            <label for="systemModule">
+                                System Module
+                            </label>
+
+                            <select
+                                id="systemModule"
+                                required>
+
+                                <option value="">
+                                    Select system module
+                                </option>
+
+                                <option value="User Access Management">
+                                    User Access Management
+                                </option>
+
+                                <option value="School Information">
+                                    School Information
+                                </option>
+
+                                <option value="Chatbot">
+                                    Chatbot
+                                </option>
+
+                                <option value="Reports">
+                                    Reports
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- PERMISSIONS -->
+
+                        <div class="permissions-area">
+
+                            <h3>
+                                Permission Level
+                            </h3>
+
+                            <p>
+                                Select one or more permissions.
+                            </p>
+
+
+                            <div class="permission-grid">
+
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="readPermission">
+
+                                    <span>
+
+                                        <strong>
+                                            Read
+                                        </strong>
+
+                                        <small>
+                                            View information
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="writePermission">
+
+                                    <span>
+
+                                        <strong>
+                                            Write
+                                        </strong>
+
+                                        <small>
+                                            Add or edit information
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="executePermission">
+
+                                    <span>
+
+                                        <strong>
+                                            Execute
+                                        </strong>
+
+                                        <small>
+                                            Perform system actions
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="adminPermission">
+
+                                    <span>
+
+                                        <strong>
+                                            Admin
+                                        </strong>
+
+                                        <small>
+                                            Manage users and permissions
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- EXPIRATION -->
+
+                        <div class="form-group">
+
+                            <label for="expirationDate">
+                                Expiration Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="expirationDate">
+
+                        </div>
+
+
+                        <div
+                            id="privilegeMessage"
+                            class="form-message">
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="cancelPrivilege">
+
+                                Cancel
+
+                            </button>
+
+
+                            <button
+                                type="submit"
+                                class="primary-button">
+
+                                Update
+
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </section>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</section>
+
+
+
+<!-- =========================================================
+     ADMIN JAVASCRIPT
+========================================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =====================================================
+       ELEMENTS
+    ====================================================== */
+
+    const loginScreen =
+        document.getElementById("adminLoginScreen");
+
+    const dashboard =
+        document.getElementById("adminDashboard");
+
+    const loginForm =
+        document.getElementById("adminLoginForm");
+
+    const loginMessage =
+        document.getElementById("adminLoginMessage");
+
+    const logoutButton =
+        document.getElementById("adminLogoutButton");
+
+
+    const userAccessPage =
+        document.getElementById("userAccessPage");
+
+    const addUserPage =
+        document.getElementById("addUserPage");
+
+    const privilegePage =
+        document.getElementById("privilegePage");
+
+
+    const openAddUserButton =
+        document.getElementById("openAddUserButton");
+
+    const openPrivilegeButton =
+        document.getElementById("openPrivilegeButton");
+
+
+    const backFromAddUser =
+        document.getElementById("backFromAddUser");
+
+    const backFromPrivilege =
+        document.getElementById("backFromPrivilege");
+
+
+    const cancelAddUser =
+        document.getElementById("cancelAddUser");
+
+    const cancelPrivilege =
+        document.getElementById("cancelPrivilege");
+
+
+    const addUserForm =
+        document.getElementById("addUserForm");
+
+    const privilegeForm =
+        document.getElementById("privilegeForm");
+
+
+    const usersTableBody =
+        document.getElementById("usersTableBody");
+
+    const accountCount =
+        document.getElementById("accountCount");
+
+    const privilegeUser =
+        document.getElementById("privilegeUser");
+
+
+    /* =====================================================
+       DEMO ADMIN ACCOUNT
+    ====================================================== */
+
+    const ADMIN_USERNAME = "admin";
+
+    const ADMIN_PASSWORD = "admin123";
+
+
+    /* =====================================================
+       STORAGE
+    ====================================================== */
+
+    let users =
+        JSON.parse(
+            localStorage.getItem(
+                "htcampusTask5Users"
+            )
+        ) || [];
+
+
+    function saveUsers() {
+
+        localStorage.setItem(
+            "htcampusTask5Users",
+            JSON.stringify(users)
+        );
+
+    }
+
+
+    /* =====================================================
+       LOGIN
+    ====================================================== */
+
+    loginForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const username =
+                document.getElementById(
+                    "adminUsername"
+                ).value.trim();
+
+
+            const password =
+                document.getElementById(
+                    "adminPassword"
+                ).value;
+
+
+            if (
+                username === ADMIN_USERNAME &&
+                password === ADMIN_PASSWORD
+            ) {
+
+                sessionStorage.setItem(
+                    "htcampusAdminLoggedIn",
+                    "true"
+                );
+
+
+                loginScreen.classList.add(
+                    "hidden"
+                );
+
+
+                dashboard.classList.remove(
+                    "hidden"
+                );
+
+
+                loadUsers();
+
+            }
+
+            else {
+
+                loginMessage.textContent =
+                    "Invalid username or password.";
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOGOUT
+    ====================================================== */
+
+    logoutButton.addEventListener(
+        "click",
+        function () {
+
+            sessionStorage.removeItem(
+                "htcampusAdminLoggedIn"
+            );
+
+            dashboard.classList.add(
+                "hidden"
+            );
+
+            loginScreen.classList.remove(
+                "hidden"
+            );
+
+            loginForm.reset();
+
+        }
+    );
+
+
+    /* =====================================================
+       PAGE NAVIGATION
+    ====================================================== */
+
+    function hideDashboardPages() {
+
+        userAccessPage.classList.add(
+            "hidden"
+        );
+
+        addUserPage.classList.add(
+            "hidden"
+        );
+
+        privilegePage.classList.add(
+            "hidden"
+        );
+
+    }
+
+
+    function showUserAccess() {
+
+        hideDashboardPages();
+
+        userAccessPage.classList.remove(
+            "hidden"
+        );
+
+        loadUsers();
+
+    }
+
+
+    function showAddUser() {
+
+        hideDashboardPages();
+
+        addUserPage.classList.remove(
+            "hidden"
+        );
+
+    }
+
+
+    function showPrivileges() {
+
+        hideDashboardPages();
+
+        privilegePage.classList.remove(
+            "hidden"
+        );
+
+        loadPrivilegeUsers();
+
+    }
+
+
+    /* =====================================================
+       OPEN BUTTONS
+    ====================================================== */
+
+    openAddUserButton.addEventListener(
+        "click",
+        showAddUser
+    );
+
+
+    openPrivilegeButton.addEventListener(
+        "click",
+        showPrivileges
+    );
+
+
+    /* =====================================================
+       BACK / CANCEL
+    ====================================================== */
+
+    backFromAddUser.addEventListener(
+        "click",
+        showUserAccess
+    );
+
+
+    backFromPrivilege.addEventListener(
+        "click",
+        showUserAccess
+    );
+
+
+    cancelAddUser.addEventListener(
+        "click",
+        showUserAccess
+    );
+
+
+    cancelPrivilege.addEventListener(
+        "click",
+        showUserAccess
+    );
+
+
+    /* =====================================================
+       FORM 1 — ADD NEW USER
+    ====================================================== */
+
+    addUserForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const fullName =
+                document.getElementById(
+                    "fullName"
+                ).value.trim();
+
+
+            const email =
+                document.getElementById(
+                    "email"
+                ).value.trim();
+
+
+            const department =
+                document.getElementById(
+                    "department"
+                ).value;
+
+
+            const role =
+                document.getElementById(
+                    "initialRole"
+                ).value;
+
+
+            const password =
+                document.getElementById(
+                    "initialPassword"
+                ).value;
+
+
+            const message =
+                document.getElementById(
+                    "addUserMessage"
+                );
+
+
+            const emailExists =
+                users.some(
+                    function (user) {
+
+                        return user.email.toLowerCase() ===
+                            email.toLowerCase();
+
+                    }
+                );
+
+
+            if (emailExists) {
+
+                message.textContent =
+                    "This email address is already registered.";
+
+                message.className =
+                    "form-message error";
+
+                return;
+
+            }
+
+
+            const newUser = {
+
+                id:
+                    "USR-" +
+                    Date.now().toString().slice(-6),
+
+                fullName:
+                    fullName,
+
+                email:
+                    email,
+
+                department:
+                    department,
+
+                role:
+                    role,
+
+                password:
+                    password,
+
+                status:
+                    "Active",
+
+                module:
+                    "",
+
+                permissions: {
+
+                    read: false,
+
+                    write: false,
+
+                    execute: false,
+
+                    admin: false
+
+                },
+
+                expirationDate:
+                    ""
+
+            };
+
+
+            users.push(newUser);
+
+            saveUsers();
+
+
+            message.textContent =
+                "User account created successfully.";
+
+            message.className =
+                "form-message success";
+
+
+            addUserForm.reset();
+
+
+            loadUsers();
+
+
+            setTimeout(
+                function () {
+
+                    showUserAccess();
+
+                },
+                800
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       FORM 2 — PRIVILEGES
+    ====================================================== */
+
+    privilegeForm.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+
+
+            const userId =
+                privilegeUser.value;
+
+
+            const module =
+                document.getElementById(
+                    "systemModule"
+                ).value;
+
+
+            const message =
+                document.getElementById(
+                    "privilegeMessage"
+                );
+
+
+            if (!userId) {
+
+                message.textContent =
+                    "Please select a User ID.";
+
+                message.className =
+                    "form-message error";
+
+                return;
+
+            }
+
+
+            if (!module) {
+
+                message.textContent =
+                    "Please select a system module.";
+
+                message.className =
+                    "form-message error";
+
+                return;
+
+            }
+
+
+            const permissions = {
+
+                read:
+                    document.getElementById(
+                        "readPermission"
+                    ).checked,
+
+                write:
+                    document.getElementById(
+                        "writePermission"
+                    ).checked,
+
+                execute:
+                    document.getElementById(
+                        "executePermission"
+                    ).checked,
+
+                admin:
+                    document.getElementById(
+                        "adminPermission"
+                    ).checked
+
+            };
+
+
+            const hasPermission =
+                permissions.read ||
+                permissions.write ||
+                permissions.execute ||
+                permissions.admin;
+
+
+            if (!hasPermission) {
+
+                message.textContent =
+                    "Please select at least one permission.";
+
+                message.className =
+                    "form-message error";
+
+                return;
+
+            }
+
+
+            const account =
+                users.find(
+                    function (user) {
+
+                        return user.id === userId;
+
+                    }
+                );
+
+
+            if (!account) {
+
+                message.textContent =
+                    "User account not found.";
+
+                message.className =
+                    "form-message error";
+
+                return;
+
+            }
+
+
+            account.module =
+                module;
+
+
+            account.permissions =
+                permissions;
+
+
+            account.expirationDate =
+                document.getElementById(
+                    "expirationDate"
+                ).value;
+
+
+            saveUsers();
+
+
+            message.textContent =
+                "Privileges updated successfully.";
+
+            message.className =
+                "form-message success";
+
+
+            setTimeout(
+                function () {
+
+                    privilegeForm.reset();
+
+                    showUserAccess();
+
+                },
+                800
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       LOAD USER TABLE
+    ====================================================== */
+
+    function loadUsers() {
+
+        users =
+            JSON.parse(
+                localStorage.getItem(
+                    "htcampusTask5Users"
+                )
+            ) || [];
+
+
+        usersTableBody.innerHTML = "";
+
+
+        accountCount.textContent =
+            users.length +
+            (
+                users.length === 1
+                    ? " Account"
+                    : " Accounts"
+            );
+
+
+        if (users.length === 0) {
+
+            usersTableBody.innerHTML = `
+
+                <tr>
+
+                    <td
+                        colspan="7"
+                        class="empty-row">
+
+                        No user accounts registered yet.
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        users.forEach(
+            function (user) {
+
+                const row =
+                    document.createElement("tr");
+
+
+                const roleClass =
+                    user.role === "Administrator"
+                        ? "role-admin"
+                        : "role-staff";
+
+
+                const statusClass =
+                    user.status === "Active"
+                        ? "status-active"
+                        : "status-inactive";
+
+
+                row.innerHTML = `
+
+                    <td>
+                        <strong>
+                            ${user.id}
+                        </strong>
+                    </td>
+
+                    <td>
+                        ${user.fullName}
+                    </td>
+
+                    <td>
+                        ${user.email}
+                    </td>
+
+                    <td>
+                        ${user.department}
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="role-badge ${roleClass}">
+
+                            ${user.role}
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <span
+                            class="status-badge ${statusClass}">
+
+                            ${user.status}
+
+                        </span>
+
+                    </td>
+
+                    <td class="action-cell">
+
+                        <button
+                            type="button"
+                            class="table-access-button"
+                            onclick="openUserPrivilege('${user.id}')">
+
+                            Manage Access
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="table-delete-button"
+                            onclick="deleteUser('${user.id}')">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                `;
+
+
+                usersTableBody.appendChild(row);
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       PRIVILEGE USER LIST
+    ====================================================== */
+
+    function loadPrivilegeUsers() {
+
+        privilegeUser.innerHTML = `
+
+            <option value="">
+                Select registered user
+            </option>
+
+        `;
+
+
+        users.forEach(
+            function (user) {
+
+                const option =
+                    document.createElement("option");
+
+
+                option.value =
+                    user.id;
+
+
+                option.textContent =
+                    user.id +
+                    " — " +
+                    user.fullName;
+
+
+                privilegeUser.appendChild(
+                    option
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       OPEN USER PRIVILEGE
+    ====================================================== */
+
+    window.openUserPrivilege =
+        function (userId) {
+
+            showPrivileges();
+
+
+            setTimeout(
+                function () {
+
+                    privilegeUser.value =
+                        userId;
+
+
+                    const user =
+                        users.find(
+                            function (item) {
+
+                                return item.id === userId;
+
+                            }
+                        );
+
+
+                    if (!user) {
+                        return;
+                    }
+
+
+                    document.getElementById(
+                        "systemModule"
+                    ).value =
+                        user.module || "";
+
+
+                    document.getElementById(
+                        "readPermission"
+                    ).checked =
+                        user.permissions.read;
+
+
+                    document.getElementById(
+                        "writePermission"
+                    ).checked =
+                        user.permissions.write;
+
+
+                    document.getElementById(
+                        "executePermission"
+                    ).checked =
+                        user.permissions.execute;
+
+
+                    document.getElementById(
+                        "adminPermission"
+                    ).checked =
+                        user.permissions.admin;
+
+
+                    document.getElementById(
+                        "expirationDate"
+                    ).value =
+                        user.expirationDate || "";
+
+                },
+                50
+            );
+
+        };
+
+
+    /* =====================================================
+       DELETE USER
+    ====================================================== */
+
+    window.deleteUser =
+        function (userId) {
+
+            const user =
+                users.find(
+                    function (item) {
+
+                        return item.id === userId;
+
+                    }
+                );
+
+
+            if (!user) {
+                return;
+            }
+
+
+            const confirmed =
+                confirm(
+                    "Are you sure you want to delete " +
+                    user.fullName +
+                    "?"
+                );
+
+
+            if (!confirmed) {
+                return;
+            }
+
+
+            users =
+                users.filter(
+                    function (item) {
+
+                        return item.id !== userId;
+
+                    }
+                );
+
+
+            saveUsers();
+
+            loadUsers();
+
+        };
+
+
+    /* =====================================================
+       RESTORE SESSION
+    ====================================================== */
+
+    const loggedIn =
+        sessionStorage.getItem(
+            "htcampusAdminLoggedIn"
+        );
+
+
+    if (loggedIn === "true") {
+
+        loginScreen.classList.add(
+            "hidden"
+        );
+
+        dashboard.classList.remove(
+            "hidden"
+        );
+
+        loadUsers();
+
+    }
+
+});
+
+</script>
+
+
+</body>
+
+</html>
