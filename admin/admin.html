@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HTCampusBot | Admin Dashboard</title>
+
+    <!-- Main Admin CSS -->
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =====================================================
+     ADMIN LOGIN
+====================================================== -->
+
+<section id="adminLoginScreen" class="admin-login-screen">
+
+    <div class="admin-login-card">
+
+        <div class="admin-login-logos">
+
+            <img src="../images/tiger-logo.png"
+                 alt="Tiger Logo">
+
+            <img src="../images/htc-logo.png"
+                 alt="Holy Trinity College Logo">
+
+        </div>
+
+        <span class="login-badge">
+            ADMINISTRATOR ACCESS
+        </span>
+
+        <h1>HTCampusBot</h1>
+
+        <p class="login-school">
+            Holy Trinity College
+        </p>
+
+        <p class="login-description">
+            Sign in to access User Access Management.
+        </p>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="adminLoginForm" novalidate>
+
+            <!-- USERNAME -->
+
+            <div class="login-group">
+
+                <label for="adminUsername">
+                    Username / Email
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="adminUsername"
+                        placeholder="Enter username or email"
+                        required
+                        minlength="1"
+                        maxlength="100"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="login-group">
+
+                <label for="adminPassword">
+                    Password
+                </label>
+
+                <div class="input-wrapper">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="adminPassword"
+                        placeholder="Enter password"
+                        required
+                        minlength="8"
+                        maxlength="50"
+                        autocomplete="current-password"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- REMEMBER ME -->
+
+            <label class="remember-admin">
+
+                <input
+                    type="checkbox"
+                    id="rememberAdmin"
+                >
+
+                <span>
+                    Remember Me
+                </span>
+
+            </label>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="admin-login-button"
+            >
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Sign In
+
+            </button>
+
+
+            <!-- LOGIN MESSAGE -->
+
+            <p
+                id="adminLoginMessage"
+                class="login-message"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+
+        <div class="login-note">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Authorized administrator access only
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN DASHBOARD
+====================================================== -->
+
+<section
+    id="adminDashboard"
+    class="admin-dashboard hidden"
+>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="admin-sidebar">
+
+
+        <!-- BRAND -->
+
+        <div class="admin-brand">
+
+            <img
+                src="../images/tiger-logo.png"
+                alt="HTCampusBot Logo"
+            >
+
+            <div>
+
+                <strong>
+                    HTCampusBot
+                </strong>
+
+                <span>
+                    Admin Panel
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NAVIGATION -->
+
+        <nav class="admin-nav">
+
+            <button
+                type="button"
+                class="admin-nav-button active"
+            >
+
+                <i class="fa-solid fa-users-gear"></i>
+
+                User Access
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button"
+            >
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button"
+            >
+
+                <i class="fa-solid fa-file-lines"></i>
+
+                Reports
+
+            </button>
+
+
+            <button
+                type="button"
+                class="admin-nav-button"
+            >
+
+                <i class="fa-solid fa-gear"></i>
+
+                Settings
+
+            </button>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Website
+
+            </a>
+
+
+            <button
+                type="button"
+                id="adminLogoutButton"
+                class="logout-button"
+            >
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Sign Out
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="admin-main">
+
+
+        <!-- HEADER -->
+
+        <header class="admin-header">
+
+            <div>
+
+                <span>
+                    ADMINISTRATOR
+                </span>
+
+                <h1>
+                    User Access Management
+                </h1>
+
+            </div>
+
+
+            <!-- ADMIN PROFILE -->
+
+            <div class="admin-profile">
+
+                <div class="profile-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        System Administrator
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             CONTENT
+        ================================================== -->
+
+        <div class="admin-content">
+
+
+            <!-- =================================================
+                 USER ACCESS HOME
+            ================================================== -->
+
+            <section
+                id="userAccessPage"
+                class="dashboard-page"
+            >
+
+
+                <!-- PAGE HEADING -->
+
+                <div class="page-heading">
+
+                    <div>
+
+                        <h2>
+                            Manage User Accounts
+                        </h2>
+
+                        <p>
+                            Create and manage accounts authorized to access HTCampusBot.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="openAddUserButton"
+                    >
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        Add New User
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- REGISTERED USERS -->
+
+                <section class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <h3>
+                                Registered Users
+                            </h3>
+
+                            <p>
+                                User accounts currently registered in the system.
+                            </p>
+
+                        </div>
+
+
+                        <span
+                            id="accountCount"
+                            class="account-count"
+                        >
+                            0 Accounts
+                        </span>
+
+                    </div>
+
+
+                    <!-- USERS TABLE -->
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        User ID
+                                    </th>
+
+                                    <th>
+                                        Full Name
+                                    </th>
+
+                                    <th>
+                                        Email Address
+                                    </th>
+
+                                    <th>
+                                        Department
+                                    </th>
+
+                                    <th>
+                                        Role
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Action
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="usersTableBody">
+
+                                <!-- JavaScript loads users here -->
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ASSIGN PRIVILEGES LAUNCH CARD -->
+
+                <section class="access-launch-card">
+
+                    <div class="access-info">
+
+                        <div class="access-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Assign Privileges
+                            </h3>
+
+                            <p>
+                                Configure Read, Write, Execute, and Admin permissions for users.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="openPrivilegeButton"
+                    >
+
+                        Manage Privileges
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     STORED PRIVILEGE RECORDS - TASK 7
+                ================================================== -->
+
+                <section class="dashboard-card privilege-records-card">
+
+                    <div class="card-header">
+                        <div>
+                            <h3>Stored Privilege Records</h3>
+                            <p>Saved user access permissions currently stored in the system.</p>
+                        </div>
+                        <span id="privilegeCount" class="account-count">0 Records</span>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="privilege-records-table">
+                            <thead>
+                                <tr>
+                                    <th>User ID</th>
+                                    <th>User</th>
+                                    <th>System Module</th>
+                                    <th>Permissions</th>
+                                    <th>Expiration Date</th>
+                                    <th>Last Updated</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="privilegeTableBody">
+                                <!-- JavaScript loads stored privilege records here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ADD NEW USER
+            ================================================== -->
+
+            <section
+                id="addUserPage"
+                class="dashboard-page hidden"
+            >
+
+
+                <!-- BACK BUTTON -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backFromAddUser"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to User Access
+
+                </button>
+
+
+
+                <!-- FORM CARD -->
+
+                <section class="form-card">
+
+
+                    <!-- FORM HEADING -->
+
+                    <div class="form-heading">
+
+                        <h2>
+                            Add New User
+                        </h2>
+
+                        <p>
+                            Create a new account for an authorized system user.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- ADD USER FORM -->
+
+                    <form
+                        id="addUserForm"
+                        novalidate
+                    >
+
+
+                        <!-- =================================================
+                             PERSONAL INFORMATION
+                        ================================================== -->
+
+                        <div class="form-section-title">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            Personal Information
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- FIRST NAME -->
+
+                            <div class="form-group">
+
+                                <label for="firstName">
+                                    First Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="firstName"
+                                    placeholder="Enter first name"
+                                    required
+                                    minlength="2"
+                                    maxlength="50"
+                                    pattern="[A-Za-zÀ-ÖØ-öø-ÿÑñ' -]+"
+                                    autocomplete="given-name"
+                                >
+
+                            </div>
+
+
+
+
+    <div class="form-group">
+
+    <label for="middleName">
+        Middle Name
+    </label>
+
+    <input
+        type="text"
+        id="middleName"
+        placeholder="Enter middle name"
+        maxlength="50"
+        pattern="[A-Za-zÀ-ÖØ-öø-ÿÑñ' -]+"
+        autocomplete="additional-name"
+    >
+
+    <small class="optional-validation-message">
+        <i class="fa-solid fa-circle-info"></i>
+        The middle name is optional.
+    </small>
+
+</div>
+
+
+
+                            <!-- LAST NAME -->
+
+                            <div class="form-group">
+
+                                <label for="lastName">
+                                    Last Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="lastName"
+                                    placeholder="Enter last name"
+                                    required
+                                    minlength="2"
+                                    maxlength="50"
+                                    pattern="[A-Za-zÀ-ÖØ-öø-ÿÑñ' -]+"
+                                    autocomplete="family-name"
+                                >
+
+                            </div>
+
+
+
+                            <!-- BIRTHDATE -->
+
+                            <div class="form-group birthdate-group">
+
+                                <label>
+                                    Birthdate
+                                </label>
+
+                                <div class="birthdate-grid">
+
+
+                                    <!-- MONTH -->
+
+                                    <select
+                                        id="birthMonth"
+                                        required
+                                        aria-label="Birth month"
+                                    >
+
+                                        <option value="">
+                                            Month
+                                        </option>
+
+                                    </select>
+
+
+
+                                    <!-- DAY -->
+
+                                    <select
+                                        id="birthDay"
+                                        required
+                                        aria-label="Birth day"
+                                    >
+
+                                        <option value="">
+                                            Day
+                                        </option>
+
+                                    </select>
+
+
+
+                                    <!-- YEAR -->
+
+                                    <select
+                                        id="birthYear"
+                                        required
+                                        aria-label="Birth year"
+                                    >
+
+                                        <option value="">
+                                            Year
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    placeholder="example@email.com"
+                                    required
+                                    maxlength="100"
+                                    autocomplete="email"
+                                >
+
+                            </div>
+
+
+
+                            <!-- DEPARTMENT -->
+
+                            <div class="form-group">
+
+                                <label for="department">
+                                    Department
+                                </label>
+
+                                <select
+                                    id="department"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Department
+                                    </option>
+
+                                    <option value="Administration">
+                                        Administration
+                                    </option>
+
+                                    <option value="Registrar">
+                                        Registrar
+                                    </option>
+
+                                    <option value="Admissions">
+                                        Admissions
+                                    </option>
+
+                                    <option value="Accounting">
+                                        Accounting
+                                    </option>
+
+                                    <option value="Guidance">
+                                        Guidance
+                                    </option>
+
+                                    <option value="Scholarship">
+                                        Scholarship
+                                    </option>
+
+                                    <option value="Information Technology">
+                                        Information Technology
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ADDRESS INFORMATION
+                        ================================================== -->
+
+                        <div class="form-section-title address-section-title">
+
+                            <i class="fa-solid fa-location-dot"></i>
+
+                            Address Information — Philippines
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- COUNTRY -->
+
+                            <div class="form-group">
+
+                                <label for="country">
+                                    Country
+                                </label>
+
+                                <select
+                                    id="country"
+                                    required
+                                    autocomplete="country-name"
+                                >
+
+                                    <option value="">
+                                        Select Country
+                                    </option>
+
+                                    <option value="Philippines">
+                                        Philippines
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- PROVINCE -->
+
+                            <div class="form-group">
+
+                                <label for="province">
+                                    Province
+                                </label>
+
+                                <select
+                                    id="province"
+                                    required
+                                    autocomplete="address-level1"
+                                >
+
+                                    <option value="">
+                                        Select Province
+                                    </option>
+
+                                    <option value="Abra">
+                                        Abra
+                                    </option>
+
+                                    <option value="Agusan del Norte">
+                                        Agusan del Norte
+                                    </option>
+
+                                    <option value="Agusan del Sur">
+                                        Agusan del Sur
+                                    </option>
+
+                                    <option value="Aklan">
+                                        Aklan
+                                    </option>
+
+                                    <option value="Albay">
+                                        Albay
+                                    </option>
+
+                                    <option value="Antique">
+                                        Antique
+                                    </option>
+
+                                    <option value="Apayao">
+                                        Apayao
+                                    </option>
+
+                                    <option value="Aurora">
+                                        Aurora
+                                    </option>
+
+                                    <option value="Basilan">
+                                        Basilan
+                                    </option>
+
+                                    <option value="Bataan">
+                                        Bataan
+                                    </option>
+
+                                    <option value="Batanes">
+                                        Batanes
+                                    </option>
+
+                                    <option value="Batangas">
+                                        Batangas
+                                    </option>
+
+                                    <option value="Benguet">
+                                        Benguet
+                                    </option>
+
+                                    <option value="Biliran">
+                                        Biliran
+                                    </option>
+
+                                    <option value="Bohol">
+                                        Bohol
+                                    </option>
+
+                                    <option value="Bukidnon">
+                                        Bukidnon
+                                    </option>
+
+                                    <option value="Bulacan">
+                                        Bulacan
+                                    </option>
+
+                                    <option value="Cagayan">
+                                        Cagayan
+                                    </option>
+
+                                    <option value="Camarines Norte">
+                                        Camarines Norte
+                                    </option>
+
+                                    <option value="Camarines Sur">
+                                        Camarines Sur
+                                    </option>
+
+                                    <option value="Camiguin">
+                                        Camiguin
+                                    </option>
+
+                                    <option value="Capiz">
+                                        Capiz
+                                    </option>
+
+                                    <option value="Catanduanes">
+                                        Catanduanes
+                                    </option>
+
+                                    <option value="Cavite">
+                                        Cavite
+                                    </option>
+
+                                    <option value="Cebu">
+                                        Cebu
+                                    </option>
+
+                                    <option value="Cotabato">
+                                        Cotabato
+                                    </option>
+
+                                    <option value="Davao de Oro">
+                                        Davao de Oro
+                                    </option>
+
+                                    <option value="Davao del Norte">
+                                        Davao del Norte
+                                    </option>
+
+                                    <option value="Davao del Sur">
+                                        Davao del Sur
+                                    </option>
+
+                                    <option value="Davao Occidental">
+                                        Davao Occidental
+                                    </option>
+
+                                    <option value="Davao Oriental">
+                                        Davao Oriental
+                                    </option>
+
+                                    <option value="Dinagat Islands">
+                                        Dinagat Islands
+                                    </option>
+
+                                    <option value="Eastern Samar">
+                                        Eastern Samar
+                                    </option>
+
+                                    <option value="Guimaras">
+                                        Guimaras
+                                    </option>
+
+                                    <option value="Ifugao">
+                                        Ifugao
+                                    </option>
+
+                                    <option value="Ilocos Norte">
+                                        Ilocos Norte
+                                    </option>
+
+                                    <option value="Ilocos Sur">
+                                        Ilocos Sur
+                                    </option>
+
+                                    <option value="Iloilo">
+                                        Iloilo
+                                    </option>
+
+                                    <option value="Isabela">
+                                        Isabela
+                                    </option>
+
+                                    <option value="Kalinga">
+                                        Kalinga
+                                    </option>
+
+                                    <option value="La Union">
+                                        La Union
+                                    </option>
+
+                                    <option value="Laguna">
+                                        Laguna
+                                    </option>
+
+                                    <option value="Lanao del Norte">
+                                        Lanao del Norte
+                                    </option>
+
+                                    <option value="Lanao del Sur">
+                                        Lanao del Sur
+                                    </option>
+
+                                    <option value="Leyte">
+                                        Leyte
+                                    </option>
+
+                                    <option value="Maguindanao del Norte">
+                                        Maguindanao del Norte
+                                    </option>
+
+                                    <option value="Maguindanao del Sur">
+                                        Maguindanao del Sur
+                                    </option>
+
+                                    <option value="Marinduque">
+                                        Marinduque
+                                    </option>
+
+                                    <option value="Masbate">
+                                        Masbate
+                                    </option>
+
+                                    <option value="Misamis Occidental">
+                                        Misamis Occidental
+                                    </option>
+
+                                    <option value="Misamis Oriental">
+                                        Misamis Oriental
+                                    </option>
+
+                                    <option value="Mountain Province">
+                                        Mountain Province
+                                    </option>
+
+                                    <option value="Negros Occidental">
+                                        Negros Occidental
+                                    </option>
+
+                                    <option value="Negros Oriental">
+                                        Negros Oriental
+                                    </option>
+
+                                    <option value="Northern Samar">
+                                        Northern Samar
+                                    </option>
+
+                                    <option value="Nueva Ecija">
+                                        Nueva Ecija
+                                    </option>
+
+                                    <option value="Nueva Vizcaya">
+                                        Nueva Vizcaya
+                                    </option>
+
+                                    <option value="Occidental Mindoro">
+                                        Occidental Mindoro
+                                    </option>
+
+                                    <option value="Oriental Mindoro">
+                                        Oriental Mindoro
+                                    </option>
+
+                                    <option value="Palawan">
+                                        Palawan
+                                    </option>
+
+                                    <option value="Pampanga">
+                                        Pampanga
+                                    </option>
+
+                                    <option value="Pangasinan">
+                                        Pangasinan
+                                    </option>
+
+                                    <option value="Quezon">
+                                        Quezon
+                                    </option>
+
+                                    <option value="Quirino">
+                                        Quirino
+                                    </option>
+
+                                    <option value="Rizal">
+                                        Rizal
+                                    </option>
+
+                                    <option value="Romblon">
+                                        Romblon
+                                    </option>
+
+                                    <option value="Samar">
+                                        Samar
+                                    </option>
+
+                                    <option value="Sarangani">
+                                        Sarangani
+                                    </option>
+
+                                    <option value="Siquijor">
+                                        Siquijor
+                                    </option>
+
+                                    <option value="Sorsogon">
+                                        Sorsogon
+                                    </option>
+
+                                    <option value="South Cotabato">
+                                        South Cotabato
+                                    </option>
+
+                                    <option value="Southern Leyte">
+                                        Southern Leyte
+                                    </option>
+
+                                    <option value="Sultan Kudarat">
+                                        Sultan Kudarat
+                                    </option>
+
+                                    <option value="Sulu">
+                                        Sulu
+                                    </option>
+
+                                    <option value="Surigao del Norte">
+                                        Surigao del Norte
+                                    </option>
+
+                                    <option value="Surigao del Sur">
+                                        Surigao del Sur
+                                    </option>
+
+                                    <option value="Tarlac">
+                                        Tarlac
+                                    </option>
+
+                                    <option value="Tawi-Tawi">
+                                        Tawi-Tawi
+                                    </option>
+
+                                    <option value="Zambales">
+                                        Zambales
+                                    </option>
+
+                                    <option value="Zamboanga del Norte">
+                                        Zamboanga del Norte
+                                    </option>
+
+                                    <option value="Zamboanga del Sur">
+                                        Zamboanga del Sur
+                                    </option>
+
+                                    <option value="Zamboanga Sibugay">
+                                        Zamboanga Sibugay
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- CITY / MUNICIPALITY -->
+
+                            <div class="form-group">
+
+                                <label for="cityMunicipality">
+                                    City / Municipality
+                                </label>
+
+                                <select
+                                    id="cityMunicipality"
+                                    required
+                                    autocomplete="address-level2"
+                                    disabled
+                                >
+
+                                    <option value="">
+                                        Select City / Municipality
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- BARANGAY -->
+
+                            <div class="form-group">
+
+                                <label for="barangay">
+                                    Barangay
+                                </label>
+
+                                <select
+                                    id="barangay"
+                                    required
+                                    disabled
+                                >
+
+                                    <option value="">
+                                        Select Barangay
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- HOUSE / UNIT -->
+
+                            <div class="form-group">
+
+                                <label for="houseUnit">
+                                    House / Unit No.
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="houseUnit"
+                                    placeholder="e.g. 123-A"
+                                    required
+                                    maxlength="30"
+                                    autocomplete="address-line1"
+                                >
+
+                            </div>
+
+
+
+                            <!-- STREET -->
+
+                            <div class="form-group">
+
+                                <label for="street">
+                                    Street / Subdivision
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="street"
+                                    placeholder="Enter street or subdivision"
+                                    required
+                                    minlength="2"
+                                    maxlength="100"
+                                    autocomplete="street-address"
+                                >
+
+                            </div>
+
+
+
+                            <!-- POSTAL CODE -->
+
+                            <div class="form-group">
+
+                                <label for="postalCode">
+                                    Postal Code
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="postalCode"
+                                    placeholder="4-digit postal code"
+                                    required
+                                    pattern="[0-9]{4}"
+                                    minlength="4"
+                                    maxlength="4"
+                                    inputmode="numeric"
+                                    autocomplete="postal-code"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ACCOUNT INFORMATION
+                        ================================================== -->
+
+                        <div class="form-section-title account-section-title">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            Account Information
+
+                        </div>
+
+
+                        <div class="form-grid">
+
+
+                            <!-- INITIAL ROLE -->
+
+                            <div class="form-group">
+
+                                <label for="initialRole">
+                                    Initial Role
+                                </label>
+
+                                <select
+                                    id="initialRole"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select Role
+                                    </option>
+
+                                    <option value="Administrator">
+                                        Administrator
+                                    </option>
+
+                                    <option value="Staff">
+                                        Staff
+                                    </option>
+
+                                    <option value="Office Personnel">
+                                        Office Personnel
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- INITIAL PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="initialPassword">
+                                    Initial Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="initialPassword"
+                                    placeholder="Create initial password"
+                                    required
+                                    minlength="8"
+                                    maxlength="50"
+                                    autocomplete="new-password"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- FORM MESSAGE -->
+
+                        <div
+                            id="addUserMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></div>
+
+
+
+                        <!-- FORM ACTIONS -->
+
+                        <div class="form-actions">
+
+
+                            <!-- CANCEL -->
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="cancelAddUser"
+                            >
+
+                                Cancel
+
+                            </button>
+
+
+                            <!-- CREATE ACCOUNT -->
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+
+                                <i class="fa-solid fa-user-plus"></i>
+
+                                Create Account
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ASSIGN PRIVILEGES
+            ================================================== -->
+
+            <section
+                id="privilegePage"
+                class="dashboard-page hidden"
+            >
+
+
+                <!-- BACK BUTTON -->
+
+                <button
+                    type="button"
+                    class="back-button"
+                    id="backFromPrivilege"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to User Access
+
+                </button>
+
+
+
+                <!-- PRIVILEGE FORM -->
+
+                <section class="form-card">
+
+
+                    <!-- FORM HEADING -->
+
+                    <div class="form-heading">
+
+                        <h2>
+                            Assign Privileges
+                        </h2>
+
+                        <p>
+                            Select a registered user and assign the appropriate system permissions.
+                        </p>
+
+                    </div>
+
+
+
+                    <form
+                        id="privilegeForm"
+                        novalidate
+                    >
+
+
+                        <!-- USER ID -->
+
+                        <div class="form-group">
+
+                            <label for="privilegeUser">
+                                User ID
+                            </label>
+
+                            <select
+                                id="privilegeUser"
+                                required
+                            >
+
+                                <option value="">
+                                    Select registered user
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- SYSTEM MODULE -->
+
+                        <div class="form-group">
+
+                            <label for="systemModule">
+                                System Module
+                            </label>
+
+                            <select
+                                id="systemModule"
+                                required
+                            >
+
+                                <option value="">
+                                    Select system module
+                                </option>
+
+                                <option value="User Access Management">
+                                    User Access Management
+                                </option>
+
+                                <option value="School Information">
+                                    School Information
+                                </option>
+
+                                <option value="Chatbot">
+                                    Chatbot
+                                </option>
+
+                                <option value="Reports">
+                                    Reports
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- =================================================
+                             ACCESS RIGHTS
+                        ================================================== -->
+
+                        <div class="permissions-area">
+
+                            <h3>
+                                Access Rights
+                            </h3>
+
+                            <p>
+                                Select one or more permissions.
+                            </p>
+
+
+                            <div class="permission-grid">
+
+
+                                <!-- READ -->
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="readPermission"
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Read
+                                        </strong>
+
+                                        <small>
+                                            View information
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- WRITE -->
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="writePermission"
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Write
+                                        </strong>
+
+                                        <small>
+                                            Add or edit information
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- EXECUTE -->
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="executePermission"
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Execute
+                                        </strong>
+
+                                        <small>
+                                            Perform system actions
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+
+
+                                <!-- ADMIN -->
+
+                                <label class="permission-card">
+
+                                    <input
+                                        type="checkbox"
+                                        id="adminPermission"
+                                    >
+
+                                    <span>
+
+                                        <strong>
+                                            Admin
+                                        </strong>
+
+                                        <small>
+                                            Manage users and permissions
+                                        </small>
+
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+
+                            <!-- PERMISSION ERROR -->
+
+                            <p
+                                id="permissionErrorMessage"
+                                class="validation-error-message permission-error-message"
+                                aria-live="polite"
+                            ></p>
+
+                        </div>
+
+
+
+                        <!-- EXPIRATION DATE -->
+
+                        <div class="form-group">
+
+                            <label for="expirationDate">
+                                Expiration Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="expirationDate"
+                            >
+
+                        </div>
+
+
+
+                        <!-- PRIVILEGE MESSAGE -->
+
+                        <div
+                            id="privilegeMessage"
+                            class="form-message"
+                            aria-live="polite"
+                        ></div>
+
+
+
+                        <!-- FORM ACTIONS -->
+
+                        <div class="form-actions">
+
+
+                            <!-- CANCEL -->
+
+                            <button
+                                type="button"
+                                class="secondary-button"
+                                id="cancelPrivilege"
+                            >
+
+                                Cancel
+
+                            </button>
+
+
+                            <!-- UPDATE ACCESS -->
+
+                            <button
+                                type="submit"
+                                class="primary-button"
+                            >
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                                Update Access
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+
+<!-- =====================================================
+     ADMIN JAVASCRIPT
+====================================================== -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>
